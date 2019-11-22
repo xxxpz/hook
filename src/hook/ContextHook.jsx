@@ -1,9 +1,16 @@
-import React, { useContext } from "react";
+import React, { useState, useReducer } from "react";
+import { handleAdd } from "./appReducer";
+import ContextChild from "./ContextChild";
+
+export const AddContext = React.createContext(null);
 
 function ContextHook(props) {
-  const theme = useContext(props.ThemeContext);
-
-  return <div>{theme.count || "no"}</div>;
+  const [state, dispatchState] = useReducer(handleAdd, { name: "", count: 1 });
+  return (
+    <AddContext.Provider value={{ state, dispatch: dispatchState }}>
+      <ContextChild />
+    </AddContext.Provider>
+  );
 }
 
 export default ContextHook;

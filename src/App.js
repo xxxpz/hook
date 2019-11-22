@@ -39,6 +39,8 @@ class App extends Component {
         <CallbackHook />
         <hr />
         <RefHook />
+        <hr />
+        <ContextHook />
       </div>
     );
   }
