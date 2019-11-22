@@ -3,7 +3,6 @@ import { actionType } from "./action";
 // state {count: 1, name: lijian}
 
 export const handleAdd = (state, action) => {
-  debugger;
   const stateClone = Object.assign({}, state);
   switch (action.type) {
     case actionType.ADD_TYPE:
